@@ -1,6 +1,5 @@
 import { NewsArticle } from '@/models/NewsArticles';
 import { NewsArticleEntry } from './../components/NewsArticleEntry';
-import './../styles/globals.css';
 import { useState, FormEvent } from 'react';
 import Head from 'next/head';
 export default function SearchNewsPage () {

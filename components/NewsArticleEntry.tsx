@@ -21,7 +21,7 @@ export  const  NewsArticleEntry = ({article :{title, description, url, urlToImag
                                 width={500}
                                 height={200}
                                 className="object-cover w-full rounded-t-lg"
-                                onError={(e) => fallbackImg()}
+                                onError={() => fallbackImg()}
                             />
                             <div>
                                 <h1 className="text-2xl">{title}</h1>

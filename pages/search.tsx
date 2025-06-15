@@ -26,6 +26,7 @@ export default function SearchNewsPage () {
             }
             catch(error){
                 setSearchResultsLoadingIsError(true);
+                console.log(error)
             }
             finally{
                 setSearchResultsLoading(false);

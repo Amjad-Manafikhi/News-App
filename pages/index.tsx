@@ -11,7 +11,7 @@ export const getServerSideProps: GetServerSideProps<BreakingNewsPageProps> = asy
   const res = await fetch(
     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${NEWS_API_KEY}`
   );
-  if (!res.ok) {
+  if (!res.ok) {  
     return {
       props: {
         newsArticles: [],

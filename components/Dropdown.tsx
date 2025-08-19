@@ -17,22 +17,26 @@ type DropdownProps = {
 };
 
 export default function Dropdown({ menuLabel, items }: DropdownProps) {
-    const [isOpen, setIsOpen]=React.useState(false);
-  const itemsElements = items.map((item) => (
-    <DropdownMenuItem key={item}>
-      <Link href={`/categories/${item}`} className="w-full">
+
+  const router = useRouter();
+  const title=router.query?.category?.toString()
+  const route=router.pathname;
+  console.log(title);
+  const [isOpen, setIsOpen]=React.useState(false);
+  const itemsElements = items.map((item) => {
+    console.log(item===title);
+    return <DropdownMenuItem key={item} className={`${title===item ? "!bg-gray-600" : ""} m-[1px] w-full`}>
+      <Link href={`/categories/${item}`}>
         {item}
       </Link>
     </DropdownMenuItem>
-  ));
+});
 
-  const router= useRouter();
-  const route=router.pathname;
 
   return (
     <DropdownMenu onOpenChange={()=>setIsOpen(prev=>!prev)}>
       <DropdownMenuTrigger asChild>
-        <button className={`flex items-center gap-1 border-0 cursor-pointer ${route=== "/categories/[category]" ? "text-gray-500":" text-gray-600"}`}>
+        <button className={`flex items-center gap-1 border-0 cursor-pointer text-gray-600`}>
           {menuLabel}
           {isOpen ? <ChevronUpIcon className="w-4 h-4"/> : <ChevronDownIcon className="w-4 h-4" />}
         </button>

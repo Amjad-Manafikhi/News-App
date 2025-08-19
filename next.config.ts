@@ -13,7 +13,9 @@ const nextConfig: NextConfig = {
         protocol:"http",
         hostname:"**",
       }
-    ]
+    ],
+    // Set a longer timeout in milliseconds (e.g., 30 seconds)
+    minimumCacheTTL: 30000, 
   }
 };
 

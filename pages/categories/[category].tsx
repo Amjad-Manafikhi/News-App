@@ -33,6 +33,7 @@ export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ pa
     const category = params?.category?.toString(); 
     const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${process.env.NEWS_API_KEY}`)
     const newsResponse:NewsResponse = await res.json(); 
+    console.log(newsResponse)
     return{
         props:{newsArticles:newsResponse.articles},
         revalidate: 5 * 60

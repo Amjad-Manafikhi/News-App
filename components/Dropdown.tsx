@@ -20,7 +20,6 @@ export default function Dropdown({ menuLabel, items }: DropdownProps) {
 
   const router = useRouter();
   const title=router.query?.category?.toString()
-  const route=router.pathname;
   console.log(title);
   const [isOpen, setIsOpen]=React.useState(false);
   const itemsElements = items.map((item) => {

@@ -20,10 +20,10 @@ export default function Dropdown({ menuLabel, items }: DropdownProps) {
 
   const router = useRouter();
   const title=router.query?.category?.toString()
-  console.log(title);
+ 
   const [isOpen, setIsOpen]=React.useState(false);
   const itemsElements = items.map((item) => {
-    console.log(item===title);
+    
     return <DropdownMenuItem key={item} className={`${title===item ? "!bg-gray-600" : ""} m-[1px] w-full`}>
       <Link href={`/categories/${item}`}>
         {item}

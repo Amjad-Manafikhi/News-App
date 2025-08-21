@@ -1,5 +1,6 @@
 import { NewsArticle } from "@/models/NewsArticles";
 import placeHolderImage from './assets/images/NewsPapers.jpg';
+import Image from "next/image";
 
 type NewsArticleEntryProps = {
     article: NewsArticle
@@ -13,7 +14,7 @@ export const NewsArticleEntry = ({ article: { title, description, url, urlToImag
         <a href={url} target="_blank" rel="noopener noreferrer">
             <div className="rounded-md">
                 <div className="w-100 rounded-md p-5 flex flex-col items-start justify-start">
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={"news article image"}
                         width={500}
